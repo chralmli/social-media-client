@@ -7,7 +7,9 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "test:e2e": "cypress run",
+    "test": "npm run test:jest && npm run test:e2e"
   },
   "keywords": [],
   "author": "Noroff",
