@@ -1,1 +1,1 @@
-![CI](https://github.com/chralmli/social-media-client/actions/workflows/node.js.yml/badge.svg)
+![CI](https://github.com/chralmli/social-media-client/actions/workflow/node.js.yml/badge.svg)
