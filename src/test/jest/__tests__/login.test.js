@@ -1,13 +1,21 @@
-jest.mock('../../../js/api/constants.js');
-jest.mock('../../../js/api/headers.js');
-jest.mock('../../../js//storage/index.js')
-
+import * as storage from '../../../js/storage/index.js';
 import { login, isLoggedIn, profile } from '../../../js/api/auth/index.js';
 
+jest.mock('../../../js/storage/index.js', () => ({
+    load: jest.fn(),
+    save: jest.fn(),
+    remove: jest.fn()
+}));
+jest.mock('../../../js/api/constants.js');
+jest.mock('../../../js/api/headers.js');
+
 describe('login.js', () => {
-    // Mock storage.save function
-    const mockSave = jest.fn();
-    Storage.save.mockImplementation(mockSave);
+    let mockSave;
+
+    beforeEach(() => {
+        mockSave = jest.fn();
+        storage.save.mockImplementation(mockSave);
+    });
 
     it('should store a token when login is successful', async () => {
         const validEmail = 'valid@email.com';
@@ -41,7 +49,7 @@ describe('login.js', () => {
 
 describe('state.js', () => {
     it('isLoggedIn should return true with a token in storage', () => {
-        Storage.load.mockReturnValueOnce('some-token');
+        storage.load.mockReturnValueOnce('some-token');
         expect(isLoggedIn()).toBe(true);
     });
 
