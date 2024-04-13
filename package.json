@@ -8,7 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
     "test:jest": "jest",
-    "cy:run": "cypress run",
+    "test:e2e": "cypress open",
     "test": "npm run test:jest && npm run test:e2e"
   },
   "keywords": [],

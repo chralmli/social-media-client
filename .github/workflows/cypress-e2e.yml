@@ -16,22 +16,12 @@ jobs:
     run-e2e-tests:
         name: Run E2E Tests
         runs-on: ubuntu-latest
-
         steps:
-          - name: Checkout Repository
+          - name: Checkout under $GITHUB_WORKSPACE
             uses: actions/checkout@v2
-
-          - name: Set up Node.js
-            uses: actions/setup-node@v2
+          
+          - name: run cypress tests with electron
+            uses: cypress-io/github-action@v2
             with:
-                node-version: '20'
-
-          - name: Install Dependencies
-            run: npm install
-
-          - name: Start Server and Run Cypress Tests
-            run: |
-              npm start &
-              npx wait-on http://localhost:3000
-              npm run cy:run
+              browser: electron
                 
