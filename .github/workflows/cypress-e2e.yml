@@ -6,7 +6,7 @@ on:
         - master
         - workflow
         - cypress-test
-  pull-request:
+  pull_request:
       branches:
         - master
         - workflow
@@ -26,8 +26,8 @@ jobs:
             with:
                 node-version: '20'
 
-          - name: Install Cypress
-            run: npm install cypress
+          - name: Install Dependencies
+            run: npm install
 
           - name: Run Cypress Tests
             run: npm run cy:run
