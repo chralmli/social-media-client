@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v2
 
       - name: List directory contents
         run: |
