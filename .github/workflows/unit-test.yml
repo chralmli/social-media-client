@@ -5,6 +5,7 @@ on:
       - master
       - workflow
       - npm-fix
+      - cypress-test
   pull_request:
     branches:
         - master
