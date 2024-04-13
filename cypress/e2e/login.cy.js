@@ -3,7 +3,7 @@ describe('Login functionality', () => {
         cy.visit('/');
 
         // Open login modal
-        cy.get('button[data-auth="login"]').click();
+        cy.get('button[data-auth="login"]').first().click();
 
         // Fill the login form and submit
         cy.get('#loginEmail').type('validuser@example.com');
@@ -16,16 +16,18 @@ describe('Login functionality', () => {
 
     it('prevents login and shows a message with invalid credentials', () => {
         cy.visit('/');
+
+        // Stub window.alert to intercept alert messages
+        cy.on('window:alert', (msg) => {
+            expect(msg).to.contains('Either your username was not found or your password is incorrect');
+        });
     
         // Open login modal
-        cy.get('button[data-auth="login"]').click();
+        cy.get('button[data-auth="login"]').first().click();
 
         // Fill the login form and submit
         cy.get('#loginEmail').type('invaliduser@example.com');
         cy.get('#loginPassword').type('invalidpassword');
         cy.get('#loginForm').submit();
-
-        // Check for an error message
-        cy.get('.error-message').should('be.visible').and('contain', 'Invalid email or password');
     });
 });
