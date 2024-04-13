@@ -4,11 +4,11 @@ on:
     branches:
       - master
       - workflow
+      - npm-fix
   pull_request:
     branches:
         - master
         - workflow
-        - npm-fix
   workflow_dispatch:
 
 jobs:
