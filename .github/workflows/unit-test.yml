@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - workflow
+      - npm-fix
   pull_request:
     branches:
         - master
@@ -17,7 +18,12 @@ jobs:
 
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/setup-node@v2
+        uses: actions/checkout@v2
+
+      - name: List directory contents
+        run: |
+          pwd
+          ls -la
         
 
       - name: Set up NodeJS
