@@ -44,8 +44,6 @@ The testing strategy aimed to cover a wide range of functionalities within the a
 
 This assignment culminated in an open Pull Request on GitHub. The Pull Request originated from the `workflow` branch and merged into the default branch of the forked repository. The Pull Request showcased the implemented workflows and comprehensive test suite.
 
-**Note**: Although not part of the graded submission, an optional Pull Request could be opened into the upstream repository's default branch for potential contributions to the larger project.
-
 ## Conclusion
 
 This assignment provided an opportunity to apply learned concepts to enhance the quality and maintainability of a software project. Implementing efficient workflows, code style enforcement, and robust testing practices contribute to a well-structured and reliable codebase.
