@@ -8,8 +8,8 @@ on:
       - cypress-test
   pull_request:
     branches:
-        - master
-        - workflow
+      - master
+      - workflow
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,6 @@ jobs:
         run: |
           pwd
           ls -la
-        
 
       - name: Set up NodeJS
         uses: actions/setup-node@v2
