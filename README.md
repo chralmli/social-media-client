@@ -1,4 +1,5 @@
-![CI](https://github.com/chralmli/social-media-client/actions/workflow/unit-test.yml/badge.svg)
+[![Automated Unit Testing](https://github.com/chralmli/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=master)](https://github.com/chralmli/social-media-client/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/chralmli/social-media-client/actions/workflows/cypress-e2e.yml/badge.svg?branch=master)](https://github.com/chralmli/social-media-client/actions/workflows/cypress-e2e.yml)
 
 # Workflow CA: Improving Application Quality (School Assignment)
 
